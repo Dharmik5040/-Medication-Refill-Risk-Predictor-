@@ -22,45 +22,19 @@ with st.form("refill_form"):
     # ✅ Add this inside the form:
     submitted = st.form_submit_button("Predict")
 if submitted:
-    # Convert categorical inputs
-    gender = 0 if gender == "Female" else 1
-    insurance_status = 1 if insurance_status == "Yes" else 0
-    sms_reminder_sent = 1 if sms_reminder_sent == "Yes" else 0
-    condition_map = {"Diabetes": 0, "Hypertension": 1, "Both": 2}
-    condition_type = condition_map[condition_type]
+    # convert inputs ...
+    # prepare input_data ...
 
-    # Prepare input data
-    input_data = pd.DataFrame([[
-        days_since_last_refill,
-        age,
-        gender,
-        insurance_status,
-        sms_reminder_sent,
-        num_past_late_refills,
-        condition_type,
-        avg_monthly_refills
-    ]], columns=[
-        'days_since_last_refill',
-        'age',
-        'gender',
-        'insurance_status',
-        'sms_reminder_sent',
-        'num_past_late_refills',
-        'condition_type',
-        'avg_monthly_refills'
-    ])
+    # Make prediction
+    prediction = model.predict(input_data)[0]
+    proba = model.predict_proba(input_data)[0][1]  # probability of class 1
 
-    # Predict
-    # Make prediction and show probability
-prediction = model.predict(input_data)[0]
-proba = model.predict_proba(input_data)[0][1]  # Probability of refill
-
-# Show model confidence
-st.metric("Refill Likelihood", f"{proba * 100:.1f}%")
-
-    # Display result
+    # Show prediction
     st.subheader("Prediction:")
+    st.metric("Refill Likelihood", f"{proba * 100:.1f}%")
+
     if prediction == 1:
         st.success("✅ Likely to Refill")
     else:
         st.error("❌ At Risk of Missing Refill")
+
