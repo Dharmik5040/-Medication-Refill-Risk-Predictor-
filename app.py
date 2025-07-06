@@ -30,3 +30,5 @@ with st.form("refill_form"):
 
     # ✅ Add this inside the form:
     submitted = st.form_submit_button("Predict")
+if submitted:
+    # predict & show result
