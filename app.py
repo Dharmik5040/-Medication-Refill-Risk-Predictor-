@@ -51,7 +51,12 @@ if submitted:
     ])
 
     # Predict
-    prediction = model.predict(input_data)[0]
+    # Make prediction and show probability
+prediction = model.predict(input_data)[0]
+proba = model.predict_proba(input_data)[0][1]  # Probability of refill
+
+# Show model confidence
+st.metric("Refill Likelihood", f"{proba * 100:.1f}%")
 
     # Display result
     st.subheader("Prediction:")
