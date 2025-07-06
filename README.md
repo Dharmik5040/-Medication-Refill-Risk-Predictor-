@@ -43,7 +43,7 @@ Chronic patients often miss medication refills, leading to poor health outcomes 
 ## 👨‍⚕️ Built By
 
 **Dharmik Shah** — Healthcare + Pharmacy + AI  
-🔗 [LinkedIn](https://www.linkedin.com/in/dharmikshah/)  
+🔗 [LinkedIn](www.linkedin.com/in/dharmikshah4)  
 📫 dharmik5040@gmail.com
 
 ---
