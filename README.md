@@ -36,4 +36,20 @@ Chronic patients often miss medication refills, leading to poor health outcomes 
 ---
 
 ## 📂 Project Structure
+├── app.py # Streamlit app script
+├── med_refill_model.pkl # Trained ML model
+├── med_refill_dataset.csv # Simulated patient dataset
+├── requirements.txt # Dependencies for Streamlit Cloud
+## 👨‍⚕️ Built By
 
+**Dharmik Shah** — Healthcare + Pharmacy + AI  
+🔗 [LinkedIn](https://www.linkedin.com/in/dharmikshah/) *(update with your real profile)*  
+📫 dharmik.email@example.com *(update with your contact)*
+
+---
+
+## 🧠 Future Improvements
+
+- Integrate with real pharmacy refill APIs  
+- Alert system for patients at high risk  
+- Train on real-world datasets with richer features
